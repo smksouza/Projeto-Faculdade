@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.principais;
 
-/**
- *
- * @author Samuel
- */
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CadastroUsuario {
 
-    public static void cadastrarUsuario(Scanner input, ArrayList<Usuario> usuarios) {
+    public static void cadastrarUsuario(Scanner input, ArrayList<Usuario> usuarios, Administrador administrador) {
         System.out.println("==========CADASTRO DE USUÁRIO==========");
 
         System.out.print("Digite o email: ");
@@ -25,6 +17,21 @@ public class CadastroUsuario {
 
         if (!email.contains("@")) {
             System.out.println("O email deve conter o símbolo @!");
+            return;
+        }
+
+        // Verifica se o email já está cadastrado
+        for (Usuario u : usuarios) {
+            if (u.getEmail().equals(email)) {
+                System.out.println("O email já está cadastrado.");
+                return;
+            }
+        }
+
+        // Verifica se o email é igual ao do administrador
+        if (email.equals(administrador.getEmail())) {
+            System.out.println("O email já está cadastrado como administrador.");
+            return;
         }
 
         System.out.print("Digite a senha: ");
@@ -61,6 +68,14 @@ public class CadastroUsuario {
         if (cpf.isEmpty()) {
             System.out.println("Entrada inválida. O CPF não pode estar em branco.");
             return;
+        }
+
+        // Verifica se o CPF já está cadastrado
+        for (Usuario u : usuarios) {
+            if (u.getCpf().equals(cpf)) {
+                System.out.println("O CPF já está cadastrado.");
+                return;
+            }
         }
 
         Usuario u = new Usuario();

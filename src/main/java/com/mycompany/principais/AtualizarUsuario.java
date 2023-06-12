@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AtualizarUsuario {
+
     public static void atualizarUsuario(Scanner input, ArrayList<Usuario> usuarios) {
         System.out.println("========== ATUALIZAR USUÁRIO ==========");
         System.out.println("Digite o email do usuário que deseja atualizar:");
@@ -30,6 +31,16 @@ public class AtualizarUsuario {
             System.out.println("Digite o novo email:");
             String novoEmail = lerEntradaNaoVazia(input);
             if (!novoEmail.isEmpty()) {
+                if (!novoEmail.contains("@")) {
+                    System.out.println("O email deve conter o símbolo @!");
+                    return;
+                }
+                for (Usuario usuario : usuarios) {
+                    if (!usuario.equals(usuarioEncontrado) && novoEmail.equals(usuario.getEmail())) {
+                        System.out.println("O email já está cadastrado.");
+                        return;
+                    }
+                }
                 usuarioEncontrado.setEmail(novoEmail);
             }
 
@@ -42,6 +53,12 @@ public class AtualizarUsuario {
             System.out.println("Digite o novo CPF:");
             String novoCpf = lerEntradaNaoVazia(input);
             if (!novoCpf.isEmpty()) {
+                for (Usuario usuario : usuarios) {
+                    if (!usuario.equals(usuarioEncontrado) && novoCpf.equals(usuario.getCpf())) {
+                        System.out.println("O CPF já está cadastrado.");
+                        return;
+                    }
+                }
                 usuarioEncontrado.setCpf(novoCpf);
             }
 
@@ -83,5 +100,4 @@ public class AtualizarUsuario {
         return novaIdade;
     }
 }
-
 

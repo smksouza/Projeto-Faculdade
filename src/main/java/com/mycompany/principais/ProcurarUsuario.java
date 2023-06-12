@@ -21,7 +21,7 @@ public class ProcurarUsuario {
                 System.out.println("Usuário encontrado");
                 System.out.println("\tNome: " + uTemp.getNome());
                 System.out.println("\tEmail: " + uTemp.getEmail());
-                System.out.println("\tSenha: " + uTemp.getSenha());
+                System.out.println("\tCPF: " + uTemp.getCpf());
                 encontrado = true;
                 break;
             }

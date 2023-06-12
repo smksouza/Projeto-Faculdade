@@ -8,7 +8,6 @@ package com.mycompany.principais;
  *
  * @author Samuel
  */
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,13 +18,21 @@ public class Principal {
 
         ArrayList<Usuario> usuarios = new ArrayList<>();
 
+        // Criação do objeto Administrador
+        Administrador administrador = new Administrador();
+        administrador.setNome("Admin");
+        administrador.setIdade(30);
+        administrador.setEmail("admin@gmail.com");
+        administrador.setSenha("admin123");
+        administrador.setCpf("123456789");
+
         // Criação dos objetos já cadastrados
         Usuario usuario1 = new Usuario();
         usuario1.setNome("João");
         usuario1.setIdade(20);
         usuario1.setEmail("joao@gmail.com");
         usuario1.setSenha("senha1");
-        usuario1.setCpf("317.051.820-89");
+        usuario1.setCpf("31705182089");
         usuarios.add(usuario1);
 
         Usuario usuario2 = new Usuario();
@@ -33,7 +40,7 @@ public class Principal {
         usuario2.setIdade(19);
         usuario2.setEmail("maria@gmail.com");
         usuario2.setSenha("senha2");
-        usuario2.setCpf("369.362.950-10");
+        usuario2.setCpf("36936295010");
         usuarios.add(usuario2);
 
         Usuario usuario3 = new Usuario();
@@ -41,7 +48,7 @@ public class Principal {
         usuario3.setIdade(21);
         usuario3.setEmail("pedro@gmail.com");
         usuario3.setSenha("senha3");
-        usuario3.setCpf("898.125.230-06");
+        usuario3.setCpf("89812523006");
         usuarios.add(usuario3);
 
         Usuario usuario4 = new Usuario();
@@ -49,7 +56,7 @@ public class Principal {
         usuario4.setIdade(18);
         usuario4.setEmail("ana@gmail.com");
         usuario4.setSenha("senha4");
-        usuario4.setCpf("702.217.480-67");
+        usuario4.setCpf("70221748067");
         usuarios.add(usuario4);
 
         Usuario usuario5 = new Usuario();
@@ -57,7 +64,7 @@ public class Principal {
         usuario5.setIdade(22);
         usuario5.setEmail("carlo@gmail.com");
         usuario5.setSenha("senha5");
-        usuario5.setCpf("935.407.890-73");
+        usuario5.setCpf("93540789073");
         usuarios.add(usuario5);
 
         Usuario usuario6 = new Usuario();
@@ -65,7 +72,7 @@ public class Principal {
         usuario6.setIdade(24);
         usuario6.setEmail("laura@gmail.com");
         usuario6.setSenha("senha6");
-        usuario6.setCpf("676.619.290-90");
+        usuario6.setCpf("67661929090");
         usuarios.add(usuario6);
 
         Usuario usuario7 = new Usuario();
@@ -73,7 +80,7 @@ public class Principal {
         usuario1.setIdade(18);
         usuario7.setEmail("lucas@gmail.com");
         usuario7.setSenha("senha7");
-        usuario7.setCpf("961.465.160-15");
+        usuario7.setCpf("96146516015");
         usuarios.add(usuario7);
 
         boolean rodando = true;
@@ -93,7 +100,7 @@ public class Principal {
             switch (opcao) {
 
                 case "1": {
-                    CadastroUsuario.cadastrarUsuario(input, usuarios);
+                    CadastroUsuario.cadastrarUsuario(input, usuarios, administrador);
                     break;
                 }
                 case "2": {
@@ -111,7 +118,7 @@ public class Principal {
                     break;
                 }
                 case "5": {
-                    RemoverUsuario.removerUsuario(input, usuarios);
+                    RemoverUsuario.removerUsuario(input, usuarios, administrador);
                     break;
                 }
                 case "6": {
