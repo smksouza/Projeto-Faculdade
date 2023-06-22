@@ -4,7 +4,14 @@ package com.mycompany.principais;
  *
  * @author samue
  */
+/**
+ * A classe "Usuario" representa um usuário do sistema. Possui atributos como
+ * nome, email, senha, CPF e idade. Também possui métodos getter e setter para
+ * acessar e modificar os atributos.
+ */
+
 public class Usuario {
+
     private String nome;
     private String email;
     private String senha;

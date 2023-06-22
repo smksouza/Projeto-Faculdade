@@ -7,11 +7,14 @@ public class AtualizarUsuario {
 
     public static void atualizarUsuario(Scanner input, ArrayList<Usuario> usuarios) {
         System.out.println("========== ATUALIZAR USUÁRIO ==========");
+
+        // Solicitar o email do usuário que deseja atualizar
         System.out.println("Digite o email do usuário que deseja atualizar:");
         String email = input.nextLine();
 
         Usuario usuarioEncontrado = null;
 
+        // Procurar o usuário com base no email fornecido
         for (Usuario usuario : usuarios) {
             if (email.equals(usuario.getEmail())) {
                 usuarioEncontrado = usuario;
@@ -22,12 +25,14 @@ public class AtualizarUsuario {
         if (usuarioEncontrado != null) {
             System.out.println("Usuário encontrado");
 
+            // Solicitar e atualizar o nome do usuário
             System.out.println("Digite o novo nome:");
             String novoNome = lerEntradaNaoVazia(input);
             if (!novoNome.isEmpty()) {
                 usuarioEncontrado.setNome(novoNome);
             }
 
+            // Solicitar e atualizar o email do usuário
             System.out.println("Digite o novo email:");
             String novoEmail = lerEntradaNaoVazia(input);
             if (!novoEmail.isEmpty()) {
@@ -44,12 +49,14 @@ public class AtualizarUsuario {
                 usuarioEncontrado.setEmail(novoEmail);
             }
 
+            // Solicitar e atualizar a senha do usuário
             System.out.println("Digite a nova senha:");
             String novaSenha = lerEntradaNaoVazia(input);
             if (!novaSenha.isEmpty()) {
                 usuarioEncontrado.setSenha(novaSenha);
             }
 
+            // Solicitar e atualizar o CPF do usuário
             System.out.println("Digite o novo CPF:");
             String novoCpf = lerEntradaNaoVazia(input);
             if (!novoCpf.isEmpty()) {
@@ -62,6 +69,7 @@ public class AtualizarUsuario {
                 usuarioEncontrado.setCpf(novoCpf);
             }
 
+            // Solicitar e atualizar a idade do usuário
             System.out.println("Digite a nova idade:");
             int novaIdade = lerIdadeValida(input);
             usuarioEncontrado.setIdade(novaIdade);
@@ -72,6 +80,7 @@ public class AtualizarUsuario {
         }
     }
 
+    // Ler uma entrada do usuário que não pode estar vazia
     private static String lerEntradaNaoVazia(Scanner input) {
         String entrada = input.nextLine().trim();
         while (entrada.isEmpty()) {
@@ -81,6 +90,7 @@ public class AtualizarUsuario {
         return entrada;
     }
 
+    // Ler uma idade válida do usuário (número inteiro)
     private static int lerIdadeValida(Scanner input) {
         int novaIdade = 0;
         boolean idadeValida = false;
@@ -100,4 +110,3 @@ public class AtualizarUsuario {
         return novaIdade;
     }
 }
-

@@ -5,13 +5,16 @@
 package com.mycompany.principais;
 
 /**
- *
- * @author Samuel
+ * Classe responsável por listar os usuários cadastrados.
  */
 import java.util.ArrayList;
 
 public class ListarUsuarios {
 
+    /**
+     * Lista todos os usuários cadastrados, exibindo seus emails, nomes e CPFs.
+     * @param usuarios a lista de usuários cadastrados
+     */
     public static void listarUsuarios(ArrayList<Usuario> usuarios) {
         System.out.println("==========TODOS OS USUÁRIOS CADASTRADOS==========");
         System.out.println("Email\t\tNome\t\tCPF");
@@ -22,4 +25,3 @@ public class ListarUsuarios {
         System.out.println("Usuários Totais: " + usuarios.size());
     }
 }
-

@@ -100,24 +100,29 @@ public class Principal {
             switch (opcao) {
 
                 case "1": {
+                    // Chama o método para cadastrar um usuário
                     CadastroUsuario.cadastrarUsuario(input, usuarios, administrador);
                     break;
                 }
                 case "2": {
+                    // Chama o método para listar todos os usuários cadastrados
                     ListarUsuarios.listarUsuarios(usuarios);
                     break;
                 }
                 case "3": {
                     System.out.println("Digite o email:");
                     String email = input.nextLine();
+                    // Chama o método para procurar um usuário pelo email
                     ProcurarUsuario.ProcurarUsuario(email, usuarios);
                     break;
                 }
                 case "4": {
+                    // Chama o método para atualizar os dados de um usuário
                     AtualizarUsuario.atualizarUsuario(input, usuarios);
                     break;
                 }
                 case "5": {
+                    // Chama o método para remover um usuário
                     RemoverUsuario.removerUsuario(input, usuarios, administrador);
                     break;
                 }

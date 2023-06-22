@@ -8,6 +8,7 @@ public class CadastroUsuario {
     public static void cadastrarUsuario(Scanner input, ArrayList<Usuario> usuarios, Administrador administrador) {
         System.out.println("==========CADASTRO DE USUÁRIO==========");
 
+        // Solicitar e validar o email do usuário
         System.out.print("Digite o email: ");
         String email = input.nextLine().trim();
         if (email.isEmpty()) {
@@ -34,6 +35,7 @@ public class CadastroUsuario {
             return;
         }
 
+        // Solicitar e validar a senha do usuário
         System.out.print("Digite a senha: ");
         String senha = input.nextLine().trim();
         if (senha.isEmpty()) {
@@ -41,6 +43,7 @@ public class CadastroUsuario {
             return;
         }
 
+        // Solicitar e validar o nome do usuário
         System.out.print("Digite o nome: ");
         String nome = input.nextLine().trim();
         if (nome.isEmpty()) {
@@ -48,6 +51,7 @@ public class CadastroUsuario {
             return;
         }
 
+        // Solicitar e validar a idade do usuário
         System.out.print("Digite a idade: ");
         String idadeStr = input.nextLine().trim();
         int idade;
@@ -63,6 +67,7 @@ public class CadastroUsuario {
             return;
         }
 
+        // Solicitar e validar o CPF do usuário
         System.out.print("Digite o CPF: ");
         String cpf = input.nextLine().trim();
         if (cpf.isEmpty()) {
@@ -78,6 +83,7 @@ public class CadastroUsuario {
             }
         }
 
+        // Cria um novo usuário e o adiciona à lista de usuários
         Usuario u = new Usuario();
         u.setEmail(email);
         u.setSenha(senha);

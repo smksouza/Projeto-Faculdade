@@ -104,5 +104,4 @@ public class RemoverUsuario {
 
         System.out.println("Credenciais inválidas. Não foi possível remover o usuário.");
     }
-
 }
